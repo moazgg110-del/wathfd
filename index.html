@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة الفضاء اللانهائية - مغامرة الخيال العلمي التفاعلية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>🌌 محطة الفضاء المهجورة</h1>
+                <div class="header-controls">
+                    <button id="toggle-settings-btn" class="icon-btn" title="الإعدادات">⚙️ الإعدادات</button>
+                    <button id="toggle-about-btn" class="icon-btn" title="عن اللعبة">ℹ️ عن اللعبة</button>
+                </div>
+            </div>
+            <p class="subtitle">لعبة مغامرة خيال علمي تفاعلية لا تنتهي بذكاء Gemini الاصطناعي وتوليد المشاهد المصورة</p>
+        </header>
+
+        <!-- قسم الإعدادات -->
+        <div id="settings-panel" class="panel hidden">
+            <h2>⚙️ إعدادات اللعبة</h2>
+            <div class="setting-item">
+                <label>عنوان خادم اللعبة (يُضبط مرة واحدة بعد نشر الخادم):</label>
+                <input type="url" id="api-key-input" placeholder="https://your-worker.example.workers.dev" autocomplete="off">
+                <button id="save-api-btn" class="sub-btn" style="margin-top: 8px;">حفظ عنوان الخادم واختباره</button>
+                <small id="api-status" class="api-status" role="status">أدخل عنوان الخادم بعد نشره.</small>
+            </div>
+            <div class="setting-item">
+                <label>مظهر اللعبة (الوضع):</label>
+                <div class="theme-buttons">
+                    <button id="theme-dark-btn" class="sub-btn active">🌙 الوضع الداكن</button>
+                    <button id="theme-light-btn" class="sub-btn">☀️ الوضع الفاتح</button>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label>حجم الخط:</label>
+                <div class="font-buttons">
+                    <button id="font-small-btn" class="sub-btn">صغير</button>
+                    <button id="font-medium-btn" class="sub-btn active">متوسط</button>
+                    <button id="font-large-btn" class="sub-btn">كبير</button>
+                </div>
+            </div>
+            <button id="close-settings-btn" class="action-btn">حفظ وإغلاق الإعدادات</button>
+        </div>
+
+        <!-- قسم عن اللعبة -->
+        <div id="about-panel" class="panel hidden">
+            <h2>ℹ️ حول اللعبة</h2>
+            <div class="about-content">
+                <p><strong>اسم اللعبة:</strong> رحلة الفضاء اللانهائية (Interactive Sci-Fi Visual Adventure)</p>
+                <p><strong>عن اللعبة:</strong> مغامرة تفاعلية خيالية لا تنتهي، يعتمد محركها بالكامل على الذكاء الاصطناعي لتوليد الأحداث، المخاطر، والخيارات، وتوليد صور مشهدية تعبر عن كل حدث بصرياً بناءً على قرارات اللاعب.</p>
+                <p><strong>تطوير وبرمجة المبدع:</strong> <span class="developer-name">معاذ محمد عبد النبي</span></p>
+            </div>
+            <button id="close-about-btn" class="action-btn">إغلاق</button>
+        </div>
+
+        <!-- شاشة اللعب الرئيسية (تبدأ مباشرة) -->
+        <div id="game-panel" class="panel">
+            <!-- حاوية عرض الصورة الديناميكية للحدث -->
+            <div id="image-container" class="image-container">
+                <div id="image-loader" class="image-loader">جاري توليد مشهد الفضاء بالذكاء الاصطناعي... 🎨</div>
+                <img id="scene-image" class="scene-image hidden" alt="مشهد الحدث">
+            </div>
+
+            <div id="story-box" class="story-box">
+                <p class="loading-text">جاري استدعاء محرك الذكاء الاصطناعي وبدء المغامرة الفضائية...</p>
+            </div>
+            
+            <div id="choices-container" class="choices-container">
+                <!-- أزرار الاختيارات تظهر هنا ديناميكياً -->
+            </div>
+
+            <div class="custom-input-box">
+                <input type="text" id="custom-action" placeholder="أو اكتب ما تريد فعله بنفسك هنا...">
+                <button id="send-action-btn">إرسال الإجراء</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
